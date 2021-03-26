@@ -1,0 +1,6 @@
+This 
+is
+some text
+I use
+to 
+read with fopen
