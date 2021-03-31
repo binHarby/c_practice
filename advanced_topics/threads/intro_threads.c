@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<pthread.h>
+//this function returns a void pointer
 void* routine(){
 	printf("Test from threads\n");
 	sleep(3);
