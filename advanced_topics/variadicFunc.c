@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdarg.h>
-
+#define something 6
 void print_ints(int num,...)
 {
 	va_list args;
