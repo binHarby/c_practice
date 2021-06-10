@@ -29,19 +29,20 @@ int main(int argc, char* argv[]){
 
 	}
 	int i, sum=0;
-	for (i=start;i<end;i++){
+	for (i=start;i<end;i++)
 		sum += arr[i];
-
-	}
+	
 	printf("Partial sum: %d\n",sum);
 	if (id ==0){
 		close(fd[0]);
-		write(fd[1],&sum,sizeof(sum));
+		if(write(fd[1],&sum,sizeof(sum))==-1)
+			return 2;
 		close(fd[1]);	
 	} else{
 		int sumFromChild;
 		close(fd[1]);
-		read(fd[0],&sumFromChild,sizeof(sumFromChild));
+		if(read(fd[0],&sumFromChild,sizeof(sumFromChild))==-1)
+			return 3;
 		close(fd[0]);
 		
 		int totalSum = sum + sumFromChild;
