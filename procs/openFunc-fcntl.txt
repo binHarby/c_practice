@@ -1,0 +1,7 @@
+The duplicated FD: 1
+PING google.com(fjr04s05-in-x0e.1e100.net (2a00:1450:4019:809::200e)) 56 data bytes
+64 bytes from fjr04s05-in-x0e.1e100.net (2a00:1450:4019:809::200e): icmp_seq=1 ttl=59 time=11.4 ms
+
+--- google.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 11.434/11.434/11.434/0.000 ms
