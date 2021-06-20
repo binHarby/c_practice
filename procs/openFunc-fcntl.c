@@ -4,7 +4,7 @@
 #include <sys/wait.h>
 #include <time.h>
 #include <fcntl.h> 
-
+//SUBJECT NEED FURTHER LIB STUDYING
 int main (int argc, char* argv[]){
 	//when an execution command is called
 	//it  takes over an entire processes
@@ -40,6 +40,8 @@ int main (int argc, char* argv[]){
 		close(file2);
 
 		//TIP(try first) : you can copy FD 1 (i.e STDOUT) to an FD an then replace it
+		//YOU ARE EXECUTING PROGRAMS, EXECUTIVE PROGRAMS, BASH IS NOT AN
+		//INTERPETER HERE
 		if(execlp("ping","ping","-c","1","google.com",NULL)==-1){
 			printf("failure running!\n");	
 			return 2;

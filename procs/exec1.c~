@@ -12,8 +12,7 @@ int main (int argc, char* argv[]){
 	int pid = fork();
 	if(pid==-1) return 1;
 	if(pid==0){
-	//YOU ARE EXECUTING PROGRAMS, EXECUTIVE PROGRAMS, BASH IS NOT AN
-	//INTERPETER HERE	
+		
 		execlp("ls","ls","-ahl",NULL,NULL,NULL);
 	}else {
 		wait(NULL);

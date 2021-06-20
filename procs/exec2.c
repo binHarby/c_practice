@@ -12,7 +12,8 @@ int main (int argc, char* argv[]){
 	int pid = fork();
 	if(pid==-1) return 1;
 	if(pid==0){
-		
+		//YOU ARE EXECUTING PROGRAMS, EXECUTIVE PROGRAMS, BASH IS NOT AN
+	//INTERPETER HERE
 		if(execlp("ping","ping","-c","1","google.com",NULL)==-1){
 			printf("failure running!\n");	
 			return 2;
