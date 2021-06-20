@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
 		wait(NULL); //wait for the child to terminate
 		printf("Child is killed \n");
 		/* NOTE: ^c sends a SIGKILL	
-		 * ^z sends a SIGTSTP, can be ignored but SIGSTOP can't 
+		 * ^z sends a SIGSTOP
 		 * fg command, sends a SIGCONT, to any stopped process
 		//NOTE: please visit signal man pages, and check all avaliable signals
 		//
