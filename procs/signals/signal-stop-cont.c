@@ -16,12 +16,24 @@ int main(int argc, char* argv[]) {
 
 		}
 	}else {
-		//we wait for the child for 1 sec, other wise it 
-		//will go on forever
-		sleep(1); //sleep 1 sec
-		kill(pid,SIGKILL);//send a kill signal
+		kill(pid,SIGSTOP);
+		int t;
+		do {
+			printf("\n run child for how many seconds ? ");
+			scanf("%d",&t);
+
+			if (t>0) {
+				kill(pid,SIGCONT);
+				sleep(t);
+				kill(pid,SIGSTOP);
+
+			}
+
+		} while(t>0);
+		kill(pid,SIGKILL);
+		//had to kill the child, other wise it would've been waiting
 		wait(NULL); //wait for the child to terminate
-		printf("Child is dead, lol\n");
+		printf("Child is killed \n");
 
 		//NOTE: please visit signal man pages, and check all avaliable signals
 		//

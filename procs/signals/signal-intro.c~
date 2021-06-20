@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
 		sleep(1); //sleep 1 sec
 		kill(pid,SIGKILL);//send a kill signal
 		wait(NULL); //wait for the child to terminate
-		printf("Child is dead, lol");
+		printf("Child is dead, lol\n");
 
 	}
 
