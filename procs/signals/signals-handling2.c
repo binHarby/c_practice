@@ -2,20 +2,20 @@
 #include<stdlib.h>
 #include<signal.h>
 
-void handle_sigtstp(int sig){
-	printf("\nStop not allowed\n");
-
+void handle_sigcont(int sig){
+	printf("\nInput number: ");
+	fflush(stdout);
 
 }
 
 int main(int argc, char** argv){
 	struct sigaction sa;
-	sa.sa_handler=&handle_sigtstp;
+	sa.sa_handler=&handle_sigcont;
 	sa.sa_flags = SA_RESTART; // " because it doesn't work well with scanf"
 	//figure out why we need line 14
-	sigaction(SIGTSTP,&sa,NULL); //sigaction is more compatiable then signal
+	sigaction(SIGCONT,&sa,NULL); //sigaction is more compatiable then signal
 	//NOTE**:figure out what the third paramater is about
-	//signal(SIGTSTP,&handle_sigtstp); //this can work, not recommended for compatiblity reasons	
+	//signal(SIGCONT,&handle_sigtstp); //this can work, not recommended for compatiblity reasons	READ MAN PAGE
 	int x;
 	printf("Input number: ");
 	scanf("%d",&x);
